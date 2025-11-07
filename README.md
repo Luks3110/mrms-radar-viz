@@ -36,6 +36,33 @@ yarn install
 pnpm install
 ```
 
+## Configuration
+
+### Environment Variables
+
+Copy the example environment file and adjust as needed:
+
+```bash
+cp .env.example .env
+```
+
+Available environment variables:
+
+- `VITE_BACKEND_URL`: Backend server URL for Vite proxy (default: `http://localhost:8000`)
+- `VITE_API_BASE_URL`: API base URL for frontend requests (default: `/api`)
+
+**Development Setup:**
+```env
+VITE_BACKEND_URL=http://localhost:8000
+VITE_API_BASE_URL=/api
+```
+
+**Production Setup (without proxy):**
+```env
+VITE_BACKEND_URL=http://localhost:8000
+VITE_API_BASE_URL=http://your-backend-domain:8000/api
+```
+
 ## Development
 
 Start the development server:
@@ -107,13 +134,15 @@ GET /api/radar/overlay/image/{timestamp}?quality={web|high}
 
 Returns a transparent PNG overlay with radar data.
 
-## Configuration
+## Additional Configuration
 
 ### API Proxy
 
-The Vite config includes a proxy for API requests. In development, requests to `/api/*` are automatically proxied to `http://localhost:8000/api/*`.
+The Vite config includes a proxy for API requests configured via the `VITE_BACKEND_URL` environment variable. In development, requests to `/api/*` are automatically proxied to the backend URL specified in your `.env` file.
 
-For production, you'll need to configure your web server to proxy these requests or set the `API_BASE_URL` in `src/hooks/useRadarOverlay.ts`.
+For production, you can either:
+1. Configure your web server to proxy `/api` requests to the backend
+2. Set `VITE_API_BASE_URL` to the full backend URL in your `.env` file
 
 ### Map Settings
 
