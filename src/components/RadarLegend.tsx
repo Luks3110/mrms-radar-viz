@@ -32,7 +32,7 @@ function RadarLegend({ className = '' }: RadarLegendProps) {
         <span className="radar-legend-unit">dBZ</span>
       </div>
       <div className="radar-legend-scale">
-        {LEGEND_COLORS.map((item, index) => (
+        {LEGEND_COLORS.map((item) => (
           <div key={item.dbz} className="radar-legend-item">
             <div 
               className="radar-legend-color"
