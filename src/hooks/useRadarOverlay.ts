@@ -4,7 +4,7 @@ import type { OverlayMetadata } from '../types/radar'
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
 
 async function fetchRadarOverlay(quality: 'web' | 'high'): Promise<OverlayMetadata> {
-  const response = await fetch(`${API_BASE_URL}/radar/overlay/latest`)
+  const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}${API_BASE_URL}/radar/overlay/latest`)
   
   if (!response.ok) {
     throw new Error(`Failed to fetch radar overlay: ${response.statusText}`)
