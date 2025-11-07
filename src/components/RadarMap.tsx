@@ -16,7 +16,7 @@ const DEFAULT_ZOOM = 4
 function RadarMap({ overlayData, isLoading, quality }: RadarMapProps) {
   // Build the full image URL with downsample parameter
   const imageUrl = overlayData
-    ? `${overlayData.image_url}?downsample=${quality === 'web' ? 2 : 1}`
+    ? `${import.meta.env.VITE_BACKEND_URL}${overlayData.image_url}?downsample=${quality === 'web' ? 2 : 1}`
     : null
 
   const bounds: LatLngBoundsExpression | undefined = overlayData?.bounds
