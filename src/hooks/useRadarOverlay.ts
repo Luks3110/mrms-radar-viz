@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import type { OverlayMetadata } from '../types/radar'
 
-const API_BASE_URL = '/api'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api'
 
 async function fetchRadarOverlay(quality: 'web' | 'high'): Promise<OverlayMetadata> {
   const response = await fetch(`${API_BASE_URL}/radar/overlay/latest`)
