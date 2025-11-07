@@ -1,0 +1,152 @@
+.radar-legend {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: system-ui, -apple-system, sans-serif;
+  min-width: 140px;
+  backdrop-filter: blur(10px);
+}
+
+.radar-legend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.radar-legend-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.radar-legend-unit {
+  font-size: 11px;
+  color: #666;
+  font-weight: 500;
+}
+
+.radar-legend-scale {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.radar-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.radar-legend-color {
+  width: 24px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.radar-legend-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #333;
+  min-width: 30px;
+}
+
+.radar-legend-footer {
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.legend-intensity {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.intensity-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #555;
+}
+
+.intensity-icon {
+  font-size: 14px;
+  line-height: 1;
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .radar-legend {
+    background: rgba(30, 30, 30, 0.95);
+  }
+
+  .radar-legend-header {
+    border-bottom-color: #444;
+  }
+
+  .radar-legend-header h3 {
+    color: #e0e0e0;
+  }
+
+  .radar-legend-unit {
+    color: #999;
+  }
+
+  .radar-legend-label {
+    color: #e0e0e0;
+  }
+
+  .radar-legend-footer {
+    border-top-color: #444;
+  }
+
+  .intensity-item {
+    color: #aaa;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .radar-legend {
+    top: 60px;
+    right: 10px;
+    min-width: 120px;
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .radar-legend-header h3 {
+    font-size: 12px;
+  }
+
+  .radar-legend-color {
+    width: 20px;
+    height: 14px;
+  }
+
+  .radar-legend-label {
+    font-size: 10px;
+  }
+
+  .intensity-item {
+    font-size: 9px;
+  }
+
+  .intensity-icon {
+    font-size: 12px;
+  }
+}
+
